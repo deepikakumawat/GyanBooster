@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/loginbg"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_8dp"
+        android:paddingLeft="@dimen/dimen_50dp"
+        android:paddingRight="@dimen/dimen_50dp"
+        android:paddingTop="@dimen/dimen_8dp"
+        tools:context="com.gyanbooster.view_controller.activities.LoginActivity">
+
+
+        <ImageView
+            android:layout_width="@dimen/dimen_150dp"
+            android:layout_height="@dimen/dimen_150dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/logo" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:gravity="center"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/txt_orange"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:gravity="center"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/txt_orange"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+
+                <TextView
+                    android:id="@+id/txtForgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_10dp"
+                    android:text="@string/forgot_password"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:background="@drawable/login_btn_draweble_bt"
+                    android:gravity="center"
+                    android:text="@string/login"
+
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtCreateAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_10dp"
+                    android:text="@string/create_new_account"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

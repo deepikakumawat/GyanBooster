@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_main_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="80dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_120dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/placeholder"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/selectcoursebanner"
+                    app:layout_constraintBottom_creator="1"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintLeft_creator="1"
+                    app:layout_constraintRight_creator="1"
+                    app:layout_constraintTop_creator="1"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:layout_constraintBottom_creator="1"
+                    tools:layout_constraintLeft_creator="1"
+                    tools:layout_constraintRight_creator="1"
+                    tools:layout_constraintTop_creator="1" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/ryHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:layout_marginTop="-50dp"
+                    app:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="@android:color/white"
+                    card_view:cardElevation="@dimen/dimen_2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_5dp">
+
+                        <TextView
+                            android:id="@+id/txtCourseName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:text="@string/class_8th"
+                            android:textColor="@color/txt_orange"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvCourseCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/txtPopularVideo"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ryHeader"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:paddingLeft="@dimen/dimen_20dp"
+                    android:paddingRight="@dimen/dimen_20dp"
+                    android:paddingTop="@dimen/dimen_5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_5dp"
+                        android:text="@string/popular_videos"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/txt_14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_20dp"
+                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_5dp"
+                        android:layout_toLeftOf="@+id/imgRightArrow"
+                        android:src="@mipmap/leftarrow"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imgRightArrow"
+                        android:layout_width="@dimen/dimen_20dp"
+                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dimen_5dp"
+                        android:src="@mipmap/rightaroww"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvPopularVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtPopularVideo"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:padding="@dimen/dimen_5dp" />
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

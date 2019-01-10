@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_120dp"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ryTop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100dp"
+                android:background="@mipmap/selectcoursebanner"
+                android:orientation="vertical">
+
+                <!-- <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:gravity="center"
+                     android:padding="@dimen/dimen_10dp"
+                     android:text="@string/select_your_course"
+                     android:textColor="@android:color/white"
+                     android:textSize="@dimen/txt_18sp"
+                     android:textStyle="bold" />-->
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/selactcoursebanner" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_5dp"
+            android:weightSum="3">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_2dp"
+                android:layout_gravity="center"
+                android:layout_weight=".8"
+                android:background="@drawable/select_course_line_draweble"
+
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:background="@drawable/outer_line"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:text="@string/classes_8_12"
+                    android:textColor="@color/txt_orange"
+                    android:textSize="@dimen/txt_14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_2dp"
+                android:layout_gravity="center"
+                android:layout_weight=".8"
+                android:background="@drawable/select_course_line_draweble"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvSelectCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="@dimen/dimen_5dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:text="@string/popular_videos"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvPopularVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dimen_5dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

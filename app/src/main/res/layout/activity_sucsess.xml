@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+   >
+
+    <data>
+
+
+        <variable
+            name="click"
+            type="com.gyanbooster.view_controller.activities.SuccessActivity" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/activity_main_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ryBanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            card_view:cardBackgroundColor="@android:color/white"
+            card_view:cardElevation="@dimen/dimen_2dp"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/rlTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="@dimen/dimen_30dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dimen_2dp"
+                    android:onClick="@{(view)->click.onClick(view)}"
+                    android:src="@mipmap/ic_back"
+                    android:tint="@android:color/black" />
+
+
+                <TextView
+                    android:id="@+id/tv_screen_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/drawerSlideIcon"
+                    android:gravity="center"
+                    android:text="@string/screen_title_success"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_120dp"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ryTop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100dp"
+                android:background="@color/gray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="@string/home_success"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/success" />
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/ryHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header"
+                    android:layout_marginBottom="@dimen/dimen_20dp"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="@dimen/dimen_10dp"
+                    card_view:cardBackgroundColor="@color/gray"
+                    card_view:cardElevation="@dimen/dimen_2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_5dp">
+
+                        <TextView
+                            android:id="@+id/txtPaymentSuccessfulMsg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text="Payment Received. Your transction is successful."
+                            android:textColor="@color/txt_orange"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtTransactionId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text="Transaction ID"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/txt_14sp" />
+
+                        <TextView
+                            android:id="@+id/txtUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text="User Name "
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/txt_14sp" />
+
+                        <TextView
+                            android:id="@+id/txtCourse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text="Course"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/txt_14sp" />
+
+                        <TextView
+                            android:id="@+id/txtAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text="Amount"
+
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtVisitCourse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:onClick="@{(view)->click.onClick(view)}"
+
+                            android:text="@string/visit_your_course"
+                            android:textColor="@color/txt_orange"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</layout>

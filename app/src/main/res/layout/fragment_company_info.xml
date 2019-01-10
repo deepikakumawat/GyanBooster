@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_main_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="80dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCompanyLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:contentDescription="@string/placeholder"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/logo" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dimen_5dp"
+                    android:paddingRight="@dimen/dimen_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtPhone1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtPhone2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dimen_5dp"
+                    android:paddingRight="@dimen/dimen_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/txtGSTNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/txt_14sp" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

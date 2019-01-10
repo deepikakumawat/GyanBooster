@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_main_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="80dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:layout_height="@dimen/dimen_120dp"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:src="@mipmap/logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/header"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txtCourseName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:text="Maths and Science"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtOldPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:paddingRight="@dimen/dimen_10dp"
+                                android:text="@string/Rs"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="@dimen/txt_14sp" />
+
+                            <TextView
+                                android:id="@+id/txtNewPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:paddingRight="@dimen/dimen_5dp"
+                                android:text="15000"
+                                android:textColor="@color/txt_orange"
+                                android:textSize="@dimen/txt_14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/rbCourse"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:isIndicator="false"
+                        android:numStars="5" />
+
+                    <TextView
+                        android:id="@+id/txtCourseDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:paddingRight="@dimen/dimen_5dp"
+                        android:text="@string/caption"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/txt_14sp" />
+
+                    <TextView
+                        android:id="@+id/txtBuyNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:background="@drawable/login_btn_draweble_bt"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:paddingLeft="@dimen/dimen_20dp"
+                        android:paddingRight="@dimen/dimen_20dp"
+                        android:paddingTop="@dimen/dimen_5dp"
+                        android:text="@string/buy_now"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:background="@drawable/class_btn_draweble_bt"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:text="@string/your_review"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/txt_14sp" />
+
+
+                            <EditText
+                                android:id="@+id/etxtReview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen_50dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/outer_line_gray"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="@dimen/txt_14sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:paddingTop="@dimen/dimen_5dp"
+                                android:text="@string/choose_your_star_rating"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="@dimen/txt_14sp" />
+
+                            <RatingBar
+                                android:id="@+id/rbSetRating"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="false"
+                                android:numStars="5"
+                                android:paddingLeft="@dimen/dimen_5dp" />
+
+                            <TextView
+                                android:id="@+id/txtSubmit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:background="@drawable/login_btn_draweble_bt"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/dimen_5dp"
+                                android:paddingLeft="@dimen/dimen_20dp"
+                                android:paddingRight="@dimen/dimen_20dp"
+                                android:paddingTop="@dimen/dimen_5dp"
+                                android:text="@string/submit"
+                                android:textColor="@android:color/white" />
+
+
+                        </LinearLayout>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvCourseQuery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>
