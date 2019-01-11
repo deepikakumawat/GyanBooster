@@ -17,13 +17,13 @@ public class GyanBoosterApp extends MultiDexApplication {
 
         GyanBoosterPreferences.init(this);
 
-        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+      /*  Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread thread, Throwable throwable) {
                 throwable.printStackTrace();
                 System.exit(1);
             }
-        });
+        });*/
     }
 
 

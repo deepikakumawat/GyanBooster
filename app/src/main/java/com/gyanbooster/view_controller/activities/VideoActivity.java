@@ -44,6 +44,8 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import at.huber.youtubeExtractor.VideoMeta;
+import at.huber.youtubeExtractor.YouTubeExtractor;
 import at.huber.youtubeExtractor.YouTubeUriExtractor;
 import at.huber.youtubeExtractor.YtFile;
 
@@ -66,6 +68,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     private SelectCourseData selectCourseData;
     private UserCourseData userCourseData;
     private SubCourses subCourses;
+    private Intent serviceIntent;
 
 
     @Override
@@ -224,6 +227,12 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         try {
             int vId = view.getId();
             switch (vId) {
+                case R.id.imgCancel:
+                    serviceIntent = new Intent(VideoActivity.this, DownloadVideoService.class);
+                    stopService(serviceIntent);
+                    serviceIntent=null;
+                    activityVideoBinding.progress.setIndeterminate(false);
+                    break;
                 case R.id.imgBack:
                     onBackPressed();
                     break;
@@ -255,7 +264,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                     String youtubeLink = "http://youtube.com/watch?v=" + videoPlayURL;
 
 
-                    YouTubeUriExtractor ytEx = new YouTubeUriExtractor(this) {
+                /*    YouTubeUriExtractor ytEx = new YouTubeUriExtractor(this) {
                         @Override
                         public void onUrisAvailable(String videoId, String videoTitle, SparseArray<YtFile> ytFiles) {
                             if (ytFiles != null) {
@@ -266,18 +275,40 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
 
                                 activityVideoBinding.progress.setIndeterminate(true);
-                                Intent serviceIntent = new Intent(VideoActivity.this, DownloadVideoService.class);
-                                serviceIntent.putExtra("downloadUrl", downloadUrl);
-                                serviceIntent.putExtra("videoTitle", videoTitle);
-                                serviceIntent.putExtra("receiver", new VideoActivity.DownloadReceiver(new Handler()));
+                                if (serviceIntent==null) {
+                                    serviceIntent = new Intent(VideoActivity.this, DownloadVideoService.class);
+                                    serviceIntent.putExtra("downloadUrl", downloadUrl);
+                                    serviceIntent.putExtra("videoTitle", videoTitle);
+                                    serviceIntent.putExtra("receiver", new VideoActivity.DownloadReceiver(new Handler()));
 
-                                startService(serviceIntent);
+                                    startService(serviceIntent);
+                                }
 
                             }
                         }
                     };
 
-                    ytEx.execute(youtubeLink);
+                    ytEx.execute(youtubeLink);*/
+
+                    new YouTubeExtractor(this) {
+                        @Override
+                        public void onExtractionComplete(SparseArray<YtFile> ytFiles, VideoMeta vMeta) {
+                            if (ytFiles != null) {
+                                int itag = 22;
+                                String downloadUrl = ytFiles.get(itag).getUrl();
+                                String videoTitle = ytFiles.get(itag).toString();
+                                activityVideoBinding.progress.setIndeterminate(true);
+                                if (serviceIntent==null) {
+                                    serviceIntent = new Intent(VideoActivity.this, DownloadVideoService.class);
+                                    serviceIntent.putExtra("downloadUrl", downloadUrl);
+                                    serviceIntent.putExtra("videoTitle", videoTitle);
+                                    serviceIntent.putExtra("receiver", new VideoActivity.DownloadReceiver(new Handler()));
+
+                                    startService(serviceIntent);
+                                }
+                            }
+                        }
+                    }.extract(youtubeLink,true,false);
                     break;
 
                 default:

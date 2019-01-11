@@ -21,13 +21,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public  class DownloadVideoService extends IntentService {
+public class DownloadVideoService extends IntentService {
 
     public static final int UPDATE_PROGRESS = 8344;
     private String downloadUrl;
     private String videoTitle;
     private ResultReceiver receiver;
-
+    private DownloadVideo PB;
 
 
     public DownloadVideoService() {
@@ -44,8 +44,14 @@ public  class DownloadVideoService extends IntentService {
         videoTitle = intent.getStringExtra("videoTitle");
         receiver = (ResultReceiver) intent.getParcelableExtra("receiver");
 
-        DownloadVideo PB = new DownloadVideo(downloadUrl,videoTitle,receiver);
+        PB = new DownloadVideo(downloadUrl, videoTitle, receiver);
         PB.execute("");
+    }
+
+    @Override
+    public void onDestroy() {
+        PB.cancel(true);
+        super.onDestroy();
     }
 
 
@@ -57,9 +63,9 @@ public  class DownloadVideoService extends IntentService {
 
 
         public DownloadVideo(String downloadUrl, String videoTitle, ResultReceiver receiver) {
-            this. downloadUrl=downloadUrl;
-            this. videoTitle=videoTitle;
-            this. receiver=receiver;
+            this.downloadUrl = downloadUrl;
+            this.videoTitle = videoTitle;
+            this.receiver = receiver;
         }
 
         @Override
@@ -79,7 +85,7 @@ public  class DownloadVideoService extends IntentService {
         protected Object doInBackground(String... voids) {
             try {
 
-                downloadVideo(downloadUrl,videoTitle+".mp4");
+                downloadVideo(downloadUrl, videoTitle + ".mp4");
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -93,7 +99,7 @@ public  class DownloadVideoService extends IntentService {
             Util.showCenteredToast(DownloadVideoService.this, getString(R.string.downloaded));
 
             Bundle resultData = new Bundle();
-            resultData.putInt("progress" ,100);
+            resultData.putInt("progress", 100);
             receiver.send(UPDATE_PROGRESS, resultData);
 
         }
@@ -126,7 +132,7 @@ public  class DownloadVideoService extends IntentService {
                 total += count;
 
                 Bundle resultData = new Bundle();
-                resultData.putInt("progress" ,(int) (total * 100 / fileLength));
+                resultData.putInt("progress", (int) (total * 100 / fileLength));
                 receiver.send(UPDATE_PROGRESS, resultData);
 
 

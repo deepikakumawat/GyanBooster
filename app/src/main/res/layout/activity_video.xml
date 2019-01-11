@@ -122,24 +122,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
+                        android:layout_toRightOf="@+id/imgCancel"
                         android:paddingBottom="@dimen/dimen_5dp"
                         android:paddingLeft="@dimen/dimen_20dp"
                         android:paddingRight="@dimen/dimen_20dp"
                         android:paddingTop="@dimen/dimen_5dp"
-                        android:layout_toRightOf="@+id/imgCancel"
                         android:text="0%"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/txt_14sp" />
 
                     <ImageView
                         android:id="@+id/imgCancel"
-                        android:layout_width="@dimen/dimen_20dp"
-                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_width="@dimen/dimen_30dp"
+                        android:layout_height="@dimen/dimen_30dp"
 
                         android:layout_centerVertical="true"
+                        android:onClick="@{(view)->click.onClick(view)}"
 
-                        android:paddingTop="@dimen/dimen_5dp"
-                        android:src="@mipmap/ic_cross" />
+                        android:src="@mipmap/search_clear"
+                        android:tint="@android:color/black" />
 
                 </RelativeLayout>
 
@@ -187,11 +188,11 @@
 
 
                         <TextView
+                            android:id="@+id/txtTotalReviews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="@dimen/dimen_5dp"
                             android:paddingRight="@dimen/dimen_5dp"
-                            android:text="150 Reviews"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/txt_14sp" />
 
