@@ -29,6 +29,7 @@ import com.gyanbooster.shared_preference.GyanBoosterPreferences;
 
 public class SplashActivity extends Activity implements View.OnClickListener {
 
+
     private static final int PERMISSION_ALL = 11;
     private MyViewPagerAdapter myViewPagerAdapter;
     private TextView[] dots;
